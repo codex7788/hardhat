@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.0; //this is the version of the solidity we are using in this contract.
+pragma solidity ^0.8.1; //this is the version of the solidity we are using in this contract.
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -16,7 +16,7 @@ contract SimpleNFT is ERC721URIStorage{
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
         _mint(msg.sender, newItemId);
-        _setTokenURI(newItemId, "Hello World");
+        _setTokenURI(newItemId, "https://jsonkeeper.com/b/Z7GS");
         console.log("The NFT ID %s has been minted to %s", newItemId, msg.sender);
         return newItemId;
     }   
