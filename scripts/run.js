@@ -2,12 +2,15 @@ const hre = require("hardhat");
 
 async function main() {
 
-  const ElonNFT = await hre.ethers.getContractFactory("ElonNFT");
-  const elon = await ElonNFT.deploy();
+  const SimpleNFTFactory = await hre.ethers.getContractFactory("SimpleNFT");
+  const simpleNft = await SimpleNFTFactory.deploy();
 
-  await elon.deployed();
+  await simpleNft.deployed();
 
-  console.log("ElonNFT deployed to:", elon.address);
+  console.log("SimpleNFT deployed to:", simpleNft.address);
+
+  let txn = await simpleNft.mintNFT();
+  await txn.wait();
 }
 
 // We recommend this pattern to be able to use async/await everywhere
