@@ -13,7 +13,3 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat helps
 ```
-124
-3545
-1.....
-..
